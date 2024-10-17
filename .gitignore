@@ -1,0 +1,10 @@
+# Tiei project files
+.idea
+.tar
+*.iml
+out
+gen
+logs/
+configs/
+output/
+input/

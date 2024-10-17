@@ -1,0 +1,27 @@
+FROM tiangolo/uvicorn-gunicorn-fastapi:python3.9
+
+COPY ./requirements.txt /app/requirements.txt
+
+RUN pip install --no-cache-dir --upgrade -r /app/requirements.txt
+
+COPY . /app
+
+ENV TIMESCALEDB_PROVIDER="postgres"
+
+ENV TIMESCALEDB_USER="postgres"
+
+ENV TIMESCALEDB_PASSWORD="password"
+
+ENV TIMESCALEDB_HOST="172.18.7.27"
+
+ENV TIMESCALEDB_DATABASE="tiei_test"
+
+ENV LOGGER_CONFIGURATION_FILE="configs\\log.json"
+
+ENV SECRET_KEY="09d25e094faa6ca2556c818166b7a9563b93f7099f6f0f4caa6cf63b88e8d3e7"
+
+ENV MONGODB_USER=""
+
+ENV MONGODB_PASSWORD=""
+
+ENV MONGODB_HOST="172.18.7.27"
